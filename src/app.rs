@@ -1,9 +1,6 @@
 use crate::Stopwatch;
-use std::{
-    collections::{HashMap, HashSet},
-    time,
-};
 use indexmap::IndexMap;
+use std::{collections::HashSet, time};
 
 /// Application struct.
 pub struct App {
@@ -50,7 +47,7 @@ impl eframe::App for App {
                         if pause_button.clicked() {
                             sw.pause()
                         }
-                        
+
                         // Label for displaying the elapsed time
                         ui.add(egui::Label::new(match sw.total_elapsed_time() {
                             Some(time) => format!("{:.4}", time.as_secs_f32()),
